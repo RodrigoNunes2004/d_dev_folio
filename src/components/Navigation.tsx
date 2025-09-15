@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
+import logo from "@/assets/img/large.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -31,12 +35,29 @@ const Navigation = () => {
     }
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-      setIsMenuOpen(false);
+  const handleNavigation = (sectionId: string) => {
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete, then scroll to section
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    } else {
+      // We're already on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
+    setIsMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    navigate("/");
   };
 
   return (
@@ -44,14 +65,13 @@ const Navigation = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <div className="flex items-center space-x-2">
-              <img
-                src="/lovable-uploads/b1e585cf-4cab-4aa1-9b38-db1e2cd458e9.png"
-                alt="DDev Logo"
-                className="h-8 w-8"
-              />
+            <button
+              onClick={handleLogoClick}
+              className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+            >
+              <img src={logo} alt="DDev Logo" className="h-8 w-8" />
               <span className="text-xl font-bold text-primary">D-Dev</span>
-            </div>
+            </button>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -59,7 +79,7 @@ const Navigation = () => {
               (section) => (
                 <button
                   key={section}
-                  onClick={() => scrollToSection(section)}
+                  onClick={() => handleNavigation(section)}
                   className="text-muted-foreground hover:text-primary transition-colors capitalize"
                 >
                   {section}
@@ -104,7 +124,7 @@ const Navigation = () => {
                 (section) => (
                   <button
                     key={section}
-                    onClick={() => scrollToSection(section)}
+                    onClick={() => handleNavigation(section)}
                     className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors capitalize"
                   >
                     {section}

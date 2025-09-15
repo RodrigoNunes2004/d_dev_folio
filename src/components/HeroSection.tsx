@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 import { TypingText } from "./text/typing-text";
+import heroPhoto from "@/assets/img/heroFoto_2.jpg";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -70,7 +71,7 @@ const HeroSection = () => {
           <div className="md:w-1/2 flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl hover:scale-105 transition-transform duration-300 animate-fade-in delay-300">
               <img
-                src="/lovable-uploads/71ce3a13-6b4e-4057-afa1-83c07a72feb8.png"
+                src={heroPhoto}
                 alt="Rodrigo Nunes - Developer"
                 className="w-full h-full object-cover"
               />

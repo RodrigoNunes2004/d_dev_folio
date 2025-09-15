@@ -1,10 +1,28 @@
 import React from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import logo from "@/assets/img/large.png";
 
 const Footer = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (sectionId: string) => {
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete, then scroll to section
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    } else {
+      // We're already on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
@@ -14,14 +32,8 @@ const Footer = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-8 md:mb-0">
             <div className="flex items-center space-x-2 mb-2">
-              <img
-                src="/lovable-uploads/b1e585cf-4cab-4aa1-9b38-db1e2cd458e9.png"
-                alt="DDev Logo"
-                className="h-6 w-6"
-              />
-              <span className="text-xl font-bold text-primary">
-                DDev Portfolio
-              </span>
+              <img src={logo} alt="DDev Logo" className="h-8 w-8" />
+              <span className="text-xl font-bold text-primary">D-Dev</span>
             </div>
             <p className="text-muted-foreground">
               Building digital experiences that matter.
@@ -37,7 +49,7 @@ const Footer = () => {
                   (section) => (
                     <button
                       key={section}
-                      onClick={() => scrollToSection(section)}
+                      onClick={() => handleNavigation(section)}
                       className="block text-muted-foreground hover:text-primary transition-colors capitalize"
                     >
                       {section}
@@ -82,18 +94,18 @@ const Footer = () => {
                 Legal
               </h3>
               <div className="space-y-2">
-                <a
-                  href="#"
+                <Link
+                  to="/privacy-policy"
                   className="block text-muted-foreground hover:text-primary transition-colors"
                 >
                   Privacy Policy
-                </a>
-                <a
+                </Link>
+                {/* *<a
                   href="#"
                   className="block text-muted-foreground hover:text-primary transition-colors"
                 >
                   Terms of Service
-                </a>
+                </a>*/}
               </div>
             </div>
           </div>

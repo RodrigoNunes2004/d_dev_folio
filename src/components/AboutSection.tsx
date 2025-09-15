@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardContent } from "./ui/card";
 import { Mail, Phone, MapPin, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "./ui/button";
+import computerImg from "@/assets/img/computerImg.png";
 
 const AboutSection = () => {
   const handleResumeDownload = () => {
@@ -23,7 +24,7 @@ const AboutSection = () => {
           <div className="md:w-1/3 mb-8 md:mb-0 flex justify-center">
             <Card className="w-64 h-64 overflow-hidden shadow-lg">
               <img
-                src="/lovable-uploads/500c19d3-2f40-4fdb-abee-0ae017e557eb.png"
+                src={computerImg}
                 alt="About Rodrigo - Coding Setup"
                 className="w-full h-full object-cover"
               />

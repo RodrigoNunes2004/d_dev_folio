@@ -92,11 +92,19 @@ function checkRateLimit(clientIP: string): boolean {
 }
 
 function getClientIP(req: Request): string {
-  return (
-    req.headers.get("x-forwarded-for") ||
-    req.headers.get("x-real-ip") ||
-    "unknown"
-  );
+  const forwardedFor = req.headers.get("x-forwarded-for");
+  const realIP = req.headers.get("x-real-ip");
+
+  // Get the first IP from x-forwarded-for (comma-separated list)
+  if (forwardedFor) {
+    return forwardedFor.split(",")[0].trim();
+  }
+
+  if (realIP) {
+    return realIP.split(",")[0].trim();
+  }
+
+  return "unknown";
 }
 
 serve(async (req) => {

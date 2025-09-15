@@ -65,6 +65,8 @@ export const useContactForm = () => {
         return false;
       }
 
+      console.log("Calling Supabase function with data:", formData);
+
       const { data, error } = await supabase.functions.invoke(
         "send-contact-email",
         {
@@ -72,7 +74,10 @@ export const useContactForm = () => {
         }
       );
 
+      console.log("Supabase function response:", { data, error });
+
       if (error) {
+        console.error("Supabase function error:", error);
         throw error;
       }
 
