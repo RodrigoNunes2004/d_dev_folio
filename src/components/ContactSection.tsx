@@ -10,9 +10,19 @@ import {
   MapPin,
   Github,
   Linkedin,
-  Twitter,
   Send,
 } from "lucide-react";
+
+// Custom X (Twitter) icon component
+const XIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+);
 import { useContactForm } from "@/hooks/useContactForm";
 
 const ContactSection = () => {
@@ -101,14 +111,35 @@ const ContactSection = () => {
             <div className="mt-8">
               <h4 className="font-medium mb-4">Follow Me</h4>
               <div className="flex space-x-4">
-                <Button variant="outline" size="icon">
-                  <Github className="h-4 w-4" />
+                <Button variant="outline" size="icon" asChild>
+                  <a
+                    href="https://github.com/RodrigoNunes2004"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                  >
+                    <Github className="h-4 w-4" />
+                  </a>
                 </Button>
-                <Button variant="outline" size="icon">
-                  <Linkedin className="h-4 w-4" />
+                <Button variant="outline" size="icon" asChild>
+                  <a
+                    href="https://www.linkedin.com/in/rodrigo-fraga-nunes-82418675"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </a>
                 </Button>
-                <Button variant="outline" size="icon">
-                  <Twitter className="h-4 w-4" />
+                <Button variant="outline" size="icon" asChild>
+                  <a
+                    href="https://x.com/RodrigoDeFraga1/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X (Twitter)"
+                  >
+                    <XIcon className="h-4 w-4" />
+                  </a>
                 </Button>
               </div>
             </div>
