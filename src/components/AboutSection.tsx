@@ -8,8 +8,8 @@ const AboutSection = () => {
   const handleResumeDownload = () => {
     // Create a link element and trigger download
     const link = document.createElement("a");
-    link.href = "/resume/Rodrigo-Nunes-Resume.pdf";
-    link.download = "Rodrigo-Nunes-Resume.pdf";
+    link.href = "/resume_d_dev.pdf";
+    link.download = "Rodrigo-De-Fraga-Nunes-Resume.pdf";
     link.target = "_blank";
     document.body.appendChild(link);
     link.click();
