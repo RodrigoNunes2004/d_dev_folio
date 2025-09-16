@@ -64,7 +64,7 @@ const AboutSection = () => {
               <div className="flex items-center">
                 <Phone className="text-primary mr-2 h-4 w-4" />
                 <span className="text-muted-foreground">
-                  <strong>Phone:</strong> +64 (021)2253555
+                  <strong>Phone:</strong> +64 (21)2253555
                 </span>
               </div>
               <div className="flex items-center">

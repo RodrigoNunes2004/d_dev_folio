@@ -14,7 +14,7 @@ const ProjectsSection = () => {
       tags: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
       type: "Full Stack",
       demo: "https://fullstackweek-donalds-nu.vercel.app/fsw-donalds",
-      code: "https://github.com/RodrigoNunes2004",
+      code: "https://github.com/RodrigoNunes2004/fullstackweek-donalds.git",
     },
     {
       title: "Currency Converter App",
@@ -22,10 +22,10 @@ const ProjectsSection = () => {
         "A real-time currency converter application with live exchange rates and intuitive user interface.",
       image:
         "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-      tags: ["React", "JavaScript", "API Integration", "CSS"],
+      tags: ["JavaScript", "API Integration", "CSS"],
       type: "Frontend",
       demo: "https://currency-converter-zeta-woad.vercel.app/",
-      code: "https://github.com/RodrigoNunes2004",
+      code: "https://github.com/RodrigoNunes2004/currency_converter.git",
     },
     {
       title: "Barber Booking System",
@@ -36,7 +36,7 @@ const ProjectsSection = () => {
       tags: ["React", "Next.js", "Database", "Authentication"],
       type: "Full Stack",
       demo: "https://fullstackweek-barber-tcvr-guz576mx5-rodrigos-projects-2e367d33.vercel.app/",
-      code: "https://github.com/RodrigoNunes2004",
+      code: "https://github.com/RodrigoNunes2004/fullstackweek-barber.git",
     },
   ];
 
