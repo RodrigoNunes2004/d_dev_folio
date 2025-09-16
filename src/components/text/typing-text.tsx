@@ -60,7 +60,7 @@ export const TypingText = ({
   ]);
 
   return (
-    <span className={className}>
+    <span className={`${className} inline-block`}>
       {currentText}
       {cursor && <span className="animate-pulse">|</span>}
     </span>

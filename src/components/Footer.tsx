@@ -85,7 +85,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="block text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Twitter
+                  X (Twitter)
                 </a>
               </div>
             </div>
