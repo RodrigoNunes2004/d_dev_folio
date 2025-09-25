@@ -1,8 +1,24 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Code, TrendingUp, Wrench } from "lucide-react";
+import { Code, TrendingUp, Wrench, Terminal, MousePointer } from "lucide-react";
+import { useIsMobile } from "../hooks/use-mobile";
+import {
+  SiGit,
+  SiDocker,
+  SiAmazonwebservices,
+  SiMongodb,
+  SiPostgresql,
+  SiFigma,
+  SiNpm,
+  SiFlutter,
+  SiAndroidstudio,
+} from "react-icons/si";
 
 const SkillsSection = () => {
+  const isMobile = useIsMobile();
+
+  // Debug: Log the mobile state
+  //console.log("isMobile:", isMobile);
   const technicalSkills = [
     { name: "JavaScript/TypeScript", level: 95 },
     { name: "React.js", level: 90 },
@@ -18,18 +34,18 @@ const SkillsSection = () => {
   ];
 
   const tools = [
-    "Git",
-    "Docker",
-    "AWS",
-    "MongoDB",
-    "PostgreSQL",
-    "Figma",
-    "VS Code",
-    "npm/yarn",
-    "Flutter",
-    "Cursor",
-    "Android Studio",
-    "Visual Studio",
+    { name: "Git", Icon: SiGit },
+    { name: "Docker", Icon: SiDocker },
+    { name: "AWS", Icon: SiAmazonwebservices },
+    { name: "MongoDB", Icon: SiMongodb },
+    { name: "PostgreSQL", Icon: SiPostgresql },
+    { name: "Figma", Icon: SiFigma },
+    { name: "VS Code", Icon: Code },
+    { name: "npm/yarn", Icon: SiNpm },
+    { name: "Flutter", Icon: SiFlutter },
+    { name: "Cursor", Icon: MousePointer },
+    { name: "Android Studio", Icon: SiAndroidstudio },
+    { name: "Visual Studio", Icon: Terminal },
   ];
 
   return (
@@ -109,15 +125,32 @@ const SkillsSection = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-4">
-              {tools.map((tool) => (
-                <div
-                  key={tool}
-                  className="flex items-center bg-secondary px-4 py-2 rounded-full"
-                >
-                  <span className="text-muted-foreground">{tool}</span>
-                </div>
-              ))}
+            <div className="flex flex-wrap gap-4 justify-center">
+              {tools.map((tool) => {
+                console.log(
+                  "Rendering tool:",
+                  tool.name,
+                  "isMobile:",
+                  isMobile
+                );
+                return (
+                  <div
+                    key={tool.name}
+                    className={`flex items-center bg-secondary py-2 rounded-full ${
+                      isMobile ? "px-3" : "px-4"
+                    }`}
+                  >
+                    <tool.Icon
+                      className={`text-primary ${
+                        isMobile ? "h-5 w-5" : "h-4 w-4 mr-2"
+                      }`}
+                    />
+                    {!isMobile && (
+                      <span className="text-muted-foreground">{tool.name}</span>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </CardContent>
         </Card>
