@@ -123,7 +123,7 @@ const Footer = () => {
         </div>
         <div className="mt-8 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            © 2024 DDev Portfolio. All rights reserved.
+            © 2025 DDev Portfolio. All rights reserved.
           </p>
           <p className="mt-4 md:mt-0 text-muted-foreground text-sm">
             Made with ❤️ using React & Tailwind
