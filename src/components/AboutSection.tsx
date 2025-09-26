@@ -6,14 +6,22 @@ import computerImg from "@/assets/img/computerImg.png";
 
 const AboutSection = () => {
   const handleResumeDownload = () => {
-    // Create a link element and trigger download
-    const link = document.createElement("a");
-    link.href = "/resume_d_dev.pdf";
-    link.download = "Rodrigo-De-Fraga-Nunes-Resume.pdf";
-    link.target = "_blank";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // For mobile devices, open in new tab instead of forcing download
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // On mobile, open PDF in new tab
+      window.open("/resume_d_dev.pdf", "_blank");
+    } else {
+      // On desktop, trigger download
+      const link = document.createElement("a");
+      link.href = "/resume_d_dev.pdf";
+      link.download = "Rodrigo-De-Fraga-Nunes-Resume.pdf";
+      link.target = "_blank";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (
