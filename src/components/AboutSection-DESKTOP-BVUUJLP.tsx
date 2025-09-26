@@ -7,11 +7,8 @@ import computerImg from "@/assets/img/computerImg.png";
 const AboutSection = () => {
   const handleResumeDownload = () => {
     // For mobile devices, open in new tab instead of forcing download
-    const isMobile =
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      );
-
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
     if (isMobile) {
       // On mobile, open PDF in new tab
       window.open("/resume_d_dev.pdf", "_blank");
@@ -49,12 +46,12 @@ const AboutSection = () => {
               digital experiences.
             </p>
             <p className="text-muted-foreground mb-6">
-              I specialize in crafting modern web applications using React,
+              I specialise in crafting modern web applications using React,
               Next.js, TypeScript, Node.js, and PostgreSQL, with a strong focus
-              on developer experience and UI precision through tools like Shadcn
-              UI. My journey blends hands-on technical troubleshooting with
-              creative problem-solving, shaped by years of discipline in the
-              culinary world and now sharpened through real-world coding
+              on developeing experience and UI precision through tools like
+              Shadcn UI. My journey blends hands-on technical troubleshooting
+              with creative problem-solving, shaped by years of discipline in
+              the culinary world and now sharpened through real-world coding
               projects and continuous learning.
             </p>
             <p className="text-muted-foreground mb-6">
