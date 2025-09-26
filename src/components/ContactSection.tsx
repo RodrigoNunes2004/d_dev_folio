@@ -4,7 +4,16 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Send,
+  CheckCircle,
+} from "lucide-react";
 
 // Custom X (Twitter) icon component
 const XIcon = ({ className }: { className?: string }) => (
@@ -21,7 +30,7 @@ const ContactSection = () => {
     subject: "",
     message: "",
   });
-
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const { submitForm, isSubmitting } = useContactForm();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -37,6 +46,12 @@ const ContactSection = () => {
         subject: "",
         message: "",
       });
+      setShowSuccessMessage(true);
+
+      //Hide success message after 5 seconds
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 5000);
     }
   };
 
@@ -207,6 +222,16 @@ const ContactSection = () => {
                   {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 h-4 w-4" />
                 </Button>
+                {showSuccessMessage && (
+                  <Alert className="border-green-200 bg-green-50 text-green-800">
+                    <CheckCircle className="h-4 w-4" />
+                    <AlertTitle>Message sent successfully!</AlertTitle>
+                    <AlertDescription>
+                      Thank you! Your message has been sent successfully. I'll
+                      get back to you soon.
+                    </AlertDescription>
+                  </Alert>
+                )}
               </form>
             </CardContent>
           </Card>

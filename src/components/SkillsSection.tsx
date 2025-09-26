@@ -17,8 +17,6 @@ import {
 const SkillsSection = () => {
   const isMobile = useIsMobile();
 
-  // Debug: Log the mobile state
-  //console.log("isMobile:", isMobile);
   const technicalSkills = [
     { name: "JavaScript/TypeScript", level: 95 },
     { name: "React.js", level: 90 },
@@ -126,31 +124,23 @@ const SkillsSection = () => {
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-4 justify-center">
-              {tools.map((tool) => {
-                console.log(
-                  "Rendering tool:",
-                  tool.name,
-                  "isMobile:",
-                  isMobile
-                );
-                return (
-                  <div
-                    key={tool.name}
-                    className={`flex items-center bg-secondary py-2 rounded-full ${
-                      isMobile ? "px-3" : "px-4"
+              {tools.map((tool) => (
+                <div
+                  key={tool.name}
+                  className={`flex items-center bg-secondary py-2 rounded-full ${
+                    isMobile ? "px-3" : "px-4"
+                  }`}
+                >
+                  <tool.Icon
+                    className={`text-primary ${
+                      isMobile ? "h-5 w-5" : "h-4 w-4 mr-2"
                     }`}
-                  >
-                    <tool.Icon
-                      className={`text-primary ${
-                        isMobile ? "h-5 w-5" : "h-4 w-4 mr-2"
-                      }`}
-                    />
-                    {!isMobile && (
-                      <span className="text-muted-foreground">{tool.name}</span>
-                    )}
-                  </div>
-                );
-              })}
+                  />
+                  {!isMobile && (
+                    <span className="text-muted-foreground">{tool.name}</span>
+                  )}
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>

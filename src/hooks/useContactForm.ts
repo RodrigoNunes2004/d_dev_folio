@@ -96,11 +96,6 @@ export const useContactForm = () => {
         return false;
       }
 
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-
       return true;
     } catch (error: any) {
       console.error("Error sending contact form:", error);
