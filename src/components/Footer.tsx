@@ -90,7 +90,7 @@ const Footer = () => {
                   <span>LinkedIn</span>
                 </a>
                 <a
-                  href="https://x.com/RodrigoDeFraga1/"
+                  href="https://x.com/RodrigoDeFraga1?t=ub0ypC-w4KYTmFRgFwdN9Q&s=09"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
