@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import caterCalcProImg from "@/assets/img/caterCalcPro.png";
 
 const ProjectsSection = () => {
-  const projects = [
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
+  const initialProjects = [
     {
       title: "Fast Food Checkout System",
       description:
@@ -39,6 +42,23 @@ const ProjectsSection = () => {
       code: "https://github.com/RodrigoNunes2004/fullstackweek-barber.git",
     },
   ];
+
+  const additionalProjects = [
+    {
+      title: "Catering Calculator Pro",
+      description:
+        "A comprehensive catering calculator application for event planning with cost estimation and menu management features.",
+      image: caterCalcProImg,
+      tags: ["React", "Next.js", "Database", "Authentication"],
+      type: "Full Stack",
+      demo: "https://cater-calc-pro.vercel.app/",
+      code: "https://github.com/RodrigoNunes2004/caterCalcPro.git",
+    },
+  ];
+
+  const projects = showAllProjects
+    ? [...initialProjects, ...additionalProjects]
+    : initialProjects;
 
   return (
     <section id="projects" className="py-16 bg-secondary/30">
@@ -116,12 +136,14 @@ const ProjectsSection = () => {
           <Button
             variant="outline"
             size="lg"
-            onClick={() =>
-              window.open("https://github.com/RodrigoNunes2004", "_blank")
-            }
+            onClick={() => setShowAllProjects(!showAllProjects)}
           >
-            View All Projects
-            <ArrowRight className="ml-2 h-4 w-4" />
+            {showAllProjects ? "Show Less Projects" : "View All Projects"}
+            <ArrowRight
+              className={`ml-2 h-4 w-4 transition-transform duration-200 ${
+                showAllProjects ? "rotate-180" : ""
+              }`}
+            />
           </Button>
         </div>
       </div>
