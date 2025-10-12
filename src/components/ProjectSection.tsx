@@ -38,7 +38,7 @@ const ProjectsSection = () => {
         "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
       tags: ["React", "Next.js", "Database", "Authentication"],
       type: "Full Stack",
-      demo: "https://fullstackweek-barber-tcvr.vercel.app/",
+      demo: "https://fullstackweek-barber-kjtw.vercel.app/",
       code: "https://github.com/RodrigoNunes2004/fullstackweek-barber.git",
     },
   ];
