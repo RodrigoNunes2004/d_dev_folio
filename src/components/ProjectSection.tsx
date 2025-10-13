@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import caterCalcProImg from "@/assets/img/caterCalcPro.png";
+import bankingSystemImg from "@/assets/img/bankingSystem.png";
 
 const ProjectsSection = () => {
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -53,6 +54,22 @@ const ProjectsSection = () => {
       type: "Full Stack",
       demo: "https://cater-calc-pro.vercel.app/",
       code: "https://github.com/RodrigoNunes2004/caterCalcPro.git",
+    },
+    {
+      title: "Banking System",
+      description:
+        "A comprehensive banking system application with account management, transactions, and secure authentication features.",
+      image: bankingSystemImg,
+      tags: [
+        "ASP.Net",
+        "React",
+        "SQL Server",
+        "API Azure cloud",
+        "Authentication",
+      ],
+      type: "Full Stack",
+      demo: "https://banking-system-v2.vercel.app/",
+      code: "https://github.com/RodrigoNunes2004/BankingSystem.git",
     },
   ];
 
