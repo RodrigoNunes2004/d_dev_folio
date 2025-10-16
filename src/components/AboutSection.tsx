@@ -51,9 +51,9 @@ const AboutSection = () => {
             <p className="text-muted-foreground mb-6">
               I specialise in crafting modern web applications using React,
               Next.js, TypeScript, Node.js, and PostgreSQL, with a strong focus
-              on developeing experience and UI precision through tools like
+              on developing experience and UI precision through tools like
               Shadcn UI. My journey blends hands-on technical troubleshooting
-              with creative problem-solving, shaped by years of discipline in
+              With creative problem-solving, shaped by years of discipline in
               the culinary world and now sharpened through real-world coding
               projects and continuous learning.
             </p>
