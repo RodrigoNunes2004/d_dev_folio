@@ -61,10 +61,11 @@ const ProjectsSection = () => {
         "A comprehensive banking system application with account management, transactions, and secure authentication features.",
       image: bankingSystemImg,
       tags: [
-        "ASP.Net",
+        "ASP.Net", 
+        "C#",
         "React",
         "SQL Server",
-        "API Azure cloud",
+        "Azure Services",
         "Authentication",
       ],
       type: "Full Stack",
