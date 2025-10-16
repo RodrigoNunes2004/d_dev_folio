@@ -15,7 +15,7 @@ const ProjectsSection = () => {
         "A complete fast food ordering system with menu browsing, cart functionality, and order management features.",
       image:
         "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-      tags: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+      tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
       type: "Full Stack",
       demo: "https://fullstackweek-donalds-nu.vercel.app/fsw-donalds",
       code: "https://github.com/RodrigoNunes2004/fullstackweek-donalds.git",
@@ -37,7 +37,7 @@ const ProjectsSection = () => {
         "A comprehensive booking system for barbershops with appointment scheduling, service management, and client tracking.",
       image:
         "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-      tags: ["React", "Next.js", "Database", "Authentication"],
+      tags: ["React", "Next.js", "PostgreSQL", "Authentication"],
       type: "Full Stack",
       demo: "https://fullstackweek-barber-kjtw.vercel.app/",
       code: "https://github.com/RodrigoNunes2004/fullstackweek-barber.git",
@@ -50,7 +50,7 @@ const ProjectsSection = () => {
       description:
         "A comprehensive catering calculator application for event planning with cost estimation and menu management features.",
       image: caterCalcProImg,
-      tags: ["React", "Next.js", "Database", "Authentication"],
+      tags: ["React", "Vite", "Type Script", "PostgreSQL", "Authentication"],
       type: "Full Stack",
       demo: "https://cater-calc-pro.vercel.app/",
       code: "https://github.com/RodrigoNunes2004/caterCalcPro.git",
@@ -64,7 +64,9 @@ const ProjectsSection = () => {
         "ASP.Net", 
         "C#",
         "React",
-        "SQL Server",
+        "Type Script",
+        "Vite",
+        "SQL",
         "Azure Services",
         "Authentication",
       ],
