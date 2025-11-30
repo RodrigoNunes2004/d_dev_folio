@@ -68,8 +68,8 @@ const ProjectsSection = () => {
         "Authentication",
       ],
       type: "Full Stack",
-      demo: "https://banking-system-v2.vercel.app/",
-      code: "https://github.com/RodrigoNunes2004/BankingSystem.git",
+      demo: "https://bankaccountapp-12345-dsgpg8hhdfbsa4aq.eastasia-01.azurewebsites.net/",
+      code: "https://github.com/RodrigoNunes2004/BankSystemAdministration.git",
     },
   ];
 
