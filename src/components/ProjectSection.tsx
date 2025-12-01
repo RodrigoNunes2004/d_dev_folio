@@ -63,12 +63,12 @@ const ProjectsSection = () => {
       tags: [
         "ASP.Net", 
         "C#",
-        "React",
-        "Type Script",
-        "Vite",
+        "HTML",
+        "Javascript",
+        "CSS",
         "SQL",
-        "Azure Services",
-        "Authentication",
+        "Azure SQL Database",
+      
       ],
       type: "Full Stack",
       demo: "https://bankaccountapp-12345-dsgpg8hhdfbsa4aq.eastasia-01.azurewebsites.net/",
