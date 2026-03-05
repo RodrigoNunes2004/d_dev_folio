@@ -63,12 +63,12 @@ const ProjectsSection = () => {
       tags: [
         "ASP.Net", 
         "C#",
-        "React",
-        "Type Script",
-        "Vite",
+        "HTML",
+        "Javascript",
+        "CSS",
         "SQL",
-        "Azure Services",
-        "Authentication",
+        "Azure SQL Database",
+      
       ],
       type: "Full Stack",
       demo: "https://banking-system-v3.vercel.app/",
