@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import caterCalcProImg from "@/assets/img/caterCalcPro.png";
 import bankingSystemImg from "@/assets/img/bankingSystem.png";
+import TD_img from "@/assets/img/TD_img.png";
 
 const ProjectsSection = () => {
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -73,6 +74,26 @@ const ProjectsSection = () => {
       type: "Full Stack",
       demo: "https://banking-system-v3.vercel.app/",
       code: "https://github.com/RodrigoNunes2004/BankingSystem.git",
+    },
+
+    {
+      title: "Tide Desk Sales System",
+      description:
+        "TideDesk — SaaS for surf schools. Manages bookings, equipment, instructors, customers, and revenue. Includes Stripe subscriptions, 30-day trial, and multi-tenant authentication. Tech: Next.js 16, React 19, Prisma, PostgreSQL (Neon), NextAuth.js, Stripe, Tailwind CSS, shadcn/ui.",
+      image: TD_img,
+      tags: [
+        "Next.js",
+        "React",
+        "Prisma",
+        "PostgreSQL",
+        "NextAuth.js",
+        "Stripe",
+        "Tailwind CSS",
+        "shadcn/ui",
+      ],
+      type: "Full Stack",
+      demo: "https://tidedesk.vercel.app/",
+      code: "https://github.com/RodrigoNunes2004/tidedesk.git",
     },
   ];
 
