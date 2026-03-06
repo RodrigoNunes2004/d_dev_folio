@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent } from "./ui/card";
+import { Card } from "./ui/card";
 import { Mail, Phone, MapPin, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "./ui/button";
 import computerImg from "@/assets/img/computerImg.png";
