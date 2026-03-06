@@ -15,7 +15,7 @@ const AboutSection = () => {
     } else {
       // On desktop, trigger download
       const link = document.createElement("a");
-      link.href = "/resume_d_dev.pdf";
+      link.href = "/resume_d_dev-DESKTOP-BVUUJLP.pdf";
       link.download = "Rodrigo-De-Fraga-Nunes-Resume.pdf";
       link.target = "_blank";
       document.body.appendChild(link);
