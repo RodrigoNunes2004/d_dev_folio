@@ -11,7 +11,7 @@ const AboutSection = () => {
     
     if (isMobile) {
       // On mobile, open PDF in new tab
-      window.open("/resume_d_dev.pdf", "_blank");
+      window.open("/resume_d_dev-DESKTOP-BVUUJLP.pdf", "_blank");
     } else {
       // On desktop, trigger download
       const link = document.createElement("a");
