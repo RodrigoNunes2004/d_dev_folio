@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
 import { Button } from "./ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 import logo from "@/assets/img/large.png";
 
 const Navigation = () => {
@@ -35,6 +42,11 @@ const Navigation = () => {
     }
   };
 
+  const handleRouteNavigation = (path: string) => {
+    navigate(path);
+    setIsMenuOpen(false);
+  };
+
   const handleNavigation = (sectionId: string) => {
     // If we're not on the home page, navigate to home first
     if (location.pathname !== "/") {
@@ -58,6 +70,7 @@ const Navigation = () => {
 
   const handleLogoClick = () => {
     navigate("/");
+    setIsMenuOpen(false);
   };
 
   return (
@@ -75,17 +88,39 @@ const Navigation = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            {["home", "about", "skills", "projects", "contact"].map(
-              (section) => (
-                <button
-                  key={section}
-                  onClick={() => handleNavigation(section)}
-                  className="text-muted-foreground hover:text-primary transition-colors capitalize"
-                >
-                  {section}
+            {["home", "about", "skills"].map((section) => (
+              <button
+                key={section}
+                onClick={() => handleNavigation(section)}
+                className="text-muted-foreground hover:text-primary transition-colors capitalize"
+              >
+                {section}
+              </button>
+            ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
+                  Projects
+                  <ChevronDown className="h-4 w-4" />
                 </button>
-              )
-            )}
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center">
+                <DropdownMenuItem asChild>
+                  <Link to="/projects/web-applications">
+                    Web Applications
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/projects/games">Games</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <button
+              onClick={() => handleNavigation("contact")}
+              className="text-muted-foreground hover:text-primary transition-colors capitalize"
+            >
+              contact
+            </button>
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {isDarkMode ? (
                 <Sun className="h-4 w-4" />
@@ -120,17 +155,31 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t border-border">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {["home", "about", "skills", "projects", "contact"].map(
-                (section) => (
-                  <button
-                    key={section}
-                    onClick={() => handleNavigation(section)}
-                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors capitalize"
-                  >
-                    {section}
-                  </button>
-                )
-              )}
+              {["home", "about", "skills", "contact"].map((section) => (
+                <button
+                  key={section}
+                  onClick={() => handleNavigation(section)}
+                  className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors capitalize"
+                >
+                  {section}
+                </button>
+              ))}
+
+              <div className="px-3 pt-4 pb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Projects
+              </div>
+              <button
+                onClick={() => handleRouteNavigation("/projects/web-applications")}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors"
+              >
+                Web Applications
+              </button>
+              <button
+                onClick={() => handleRouteNavigation("/projects/games")}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors"
+              >
+                Games
+              </button>
             </div>
           </div>
         )}
