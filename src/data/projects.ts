@@ -1,3 +1,7 @@
+import bankingSystemImg from "@/assets/img/bankingSystem.png";
+import caterCalcProImg from "@/assets/img/caterCalcPro.png";
+import tideDeskImg from "@/assets/img/TD_img.png";
+
 export type WebApplicationProject = {
   title: string;
   description: string;
@@ -66,7 +70,7 @@ const additionalWebApplications: WebApplicationProject[] = [
     title: "Catering Calculator Pro",
     description:
       "A comprehensive catering calculator application for event planning with cost estimation and menu management features.",
-    image: "/images/caterCalcPro.png",
+    image: caterCalcProImg,
     tags: ["React", "Vite", "TypeScript", "PostgreSQL", "Authentication"],
     type: "Full Stack",
     demo: "https://cater-calc-pro.vercel.app/",
@@ -76,7 +80,7 @@ const additionalWebApplications: WebApplicationProject[] = [
     title: "Banking System",
     description:
       "A comprehensive banking system application with account management, transactions, and secure authentication features.",
-    image: "/images/bankingSystem.png",
+    image: bankingSystemImg,
     tags: [
       "ASP.NET",
       "C#",
@@ -94,7 +98,7 @@ const additionalWebApplications: WebApplicationProject[] = [
     title: "Tide Desk Sales System",
     description:
       "TideDesk is a SaaS platform for surf schools with booking, equipment, instructor, customer, and revenue management.",
-    image: "/images/TD_img.png",
+    image: tideDeskImg,
     tags: [
       "Next.js",
       "React",
