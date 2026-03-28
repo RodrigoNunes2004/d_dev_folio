@@ -1,11 +1,17 @@
-import { ArrowLeft } from "lucide-react";
+import React, { useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import WebProjectCard from "@/components/WebProjectCard";
 import { Button } from "@/components/ui/button";
-import { allWebApplications } from "@/data/projects";
+import { allWebApplications, featuredWebApplications } from "@/data/projects";
 
 const WebApplications = () => {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const projects = showAllProjects
+    ? allWebApplications
+    : featuredWebApplications;
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
       <Button variant="ghost" asChild className="mb-6">
@@ -24,9 +30,24 @@ const WebApplications = () => {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {allWebApplications.map((project) => (
+        {projects.map((project) => (
           <WebProjectCard key={project.title} project={project} />
         ))}
+      </div>
+
+      <div className="text-center mt-12">
+        <Button
+          variant="outline"
+          size="lg"
+          onClick={() => setShowAllProjects(!showAllProjects)}
+        >
+          {showAllProjects ? "Show Less Projects" : "View All Projects"}
+          <ArrowRight
+            className={`ml-2 h-4 w-4 transition-transform duration-200 ${
+              showAllProjects ? "rotate-180" : ""
+            }`}
+          />
+        </Button>
       </div>
     </div>
   );
