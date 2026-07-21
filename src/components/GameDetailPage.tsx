@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import GameInstructions from "@/components/GameInstructions";
 import { GameProject } from "@/data/projects";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -18,6 +19,8 @@ type GameDetailPageProps = {
 };
 
 const GameDetailPage = ({ game }: GameDetailPageProps) => {
+  const isMobile = useIsMobile();
+
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
       <Button variant="ghost" asChild className="mb-6">
@@ -57,39 +60,48 @@ const GameDetailPage = ({ game }: GameDetailPageProps) => {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button>
+            {isMobile ? (
+              <Button asChild>
+                <a href={game.videoLink} target="_blank" rel="noopener noreferrer">
                   <PlayCircle className="mr-2 h-4 w-4" />
                   Watch Gameplay
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-4xl">
-                <DialogHeader>
-                  <DialogTitle>{game.title} Gameplay</DialogTitle>
-                  <DialogDescription>
-                    Preview the gameplay showcase before downloading the game.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="space-y-4">
-                  <iframe
-                    src={game.videoPreviewUrl}
-                    title={`${game.title} gameplay`}
-                    className="h-[420px] w-full rounded-lg border bg-black"
-                    allow="autoplay"
-                  />
-                  <Button asChild variant="outline">
-                    <a
-                      href={game.videoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Open in Google Drive
-                    </a>
+                </a>
+              </Button>
+            ) : (
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button>
+                    <PlayCircle className="mr-2 h-4 w-4" />
+                    Watch Gameplay
                   </Button>
-                </div>
-              </DialogContent>
-            </Dialog>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl">
+                  <DialogHeader>
+                    <DialogTitle>{game.title} Gameplay</DialogTitle>
+                    <DialogDescription>
+                      Preview the gameplay showcase before downloading the game.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    <iframe
+                      src={game.videoPreviewUrl}
+                      title={`${game.title} gameplay`}
+                      className="h-[420px] w-full rounded-lg border bg-black"
+                      allow="autoplay"
+                    />
+                    <Button asChild variant="outline">
+                      <a
+                        href={game.videoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Open in Google Drive
+                      </a>
+                    </Button>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            )}
 
             <Button asChild variant="outline">
               <a
