@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 import { TypingText } from "./text/typing-text";
-import heroPhoto from "@/assets/img/heroFoto_2.jpg";
+import heroPhoto from "@/assets/img/hero-4.png";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -73,7 +73,7 @@ const HeroSection = () => {
               <img
                 src={heroPhoto}
                 alt="Rodrigo Nunes - Developer"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>
