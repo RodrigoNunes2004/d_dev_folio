@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 import { TypingText } from "./text/typing-text";
-import heroPhoto from "@/assets/img/Designer(1).png";
+import heroPhoto from "@/assets/img/hero-4.png";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
