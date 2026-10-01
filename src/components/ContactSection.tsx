@@ -107,7 +107,7 @@ const ContactSection = () => {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-medium">Location</h4>
-                  <p className="text-muted-foreground">Tauranga New zealand</p>
+                  <p className="text-muted-foreground">Mount Maunganui, Bay of Plenty</p>
                 </div>
               </div>
             </div>

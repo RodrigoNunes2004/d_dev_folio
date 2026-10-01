@@ -53,7 +53,7 @@ const Footer = () => {
                 Quick Links
               </h3>
               <div className="space-y-2">
-                {["home", "about", "skills", "projects", "contact"].map(
+                {["home", "about", "skills", "projects", "testimonials", "contact"].map(
                   (section) => (
                     <button
                       key={section}

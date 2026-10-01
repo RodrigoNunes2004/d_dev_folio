@@ -12,14 +12,16 @@ const AboutSection = () => {
         navigator.userAgent
       );
 
+    const resumePath = "/Rodrigo_De_Fraga_Nunes_CV_Links.pdf";
+
     if (isMobile) {
       // On mobile, open PDF in new tab
-      window.open("/resume_d_dev.pdf", "_blank");
+      window.open(resumePath, "_blank");
     } else {
       // On desktop, trigger download
       const link = document.createElement("a");
-      link.href = "/Rodrigo_De_Fraga_Nunes_CV_Links.pdf";
-      link.download = "Rodrigo-De-Fraga-Nunes-Resume.pdf";
+      link.href = resumePath;
+      link.download = "Rodrigo_De_Fraga_Nunes_CV_Links.pdf";
       link.target = "_blank";
       document.body.appendChild(link);
       link.click();
@@ -81,7 +83,7 @@ const AboutSection = () => {
               <div className="flex items-center">
                 <MapPin className="text-primary mr-2 h-4 w-4" />
                 <span className="text-muted-foreground">
-                  <strong>Location:</strong> Tauranga New Zealand
+                  <strong>Location:</strong> Mount Maunganui, Bay of Plenty
                 </span>
               </div>
             </div>

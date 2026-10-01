@@ -116,6 +116,12 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             <button
+              onClick={() => handleNavigation("testimonials")}
+              className="text-muted-foreground hover:text-primary transition-colors capitalize"
+            >
+              testimonials
+            </button>
+            <button
               onClick={() => handleNavigation("contact")}
               className="text-muted-foreground hover:text-primary transition-colors capitalize"
             >
@@ -155,7 +161,7 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t border-border">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {["home", "about", "skills", "contact"].map((section) => (
+              {["home", "about", "skills", "testimonials", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => handleNavigation(section)}

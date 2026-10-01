@@ -126,7 +126,7 @@ export const gameProjects: GameProject[] = [
     slug: "shootersam",
     title: "ShooterSam",
     description:
-      "A first-person shooter game built with Unreal Engine using a hybrid Blueprint and C++ workflow.",
+      "A third-person Unreal Engine shooter in C++ with Enhanced Input, a follow camera, and weapon handling.",
     image: "/images/shooter-sam.png",
     videoPreviewUrl:
       "https://drive.google.com/file/d/1Ehp5XSvebVnHfrjuyzlZmSovqs3mcmxm/preview",

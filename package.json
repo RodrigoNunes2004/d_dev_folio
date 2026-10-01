@@ -8,7 +8,8 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cv:pdf": "python scripts/generate_cv_pdf.py"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
