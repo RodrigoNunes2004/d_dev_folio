@@ -73,7 +73,7 @@ const HeroSection = () => {
               <img
                 src={heroPhoto}
                 alt="Rodrigo Nunes - Developer"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
             </div>
           </div>
