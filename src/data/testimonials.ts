@@ -50,6 +50,6 @@ export const testimonials: Testimonial[] = [
       "Rodrigo was an enthusiastic candidate with Mission Ready. He was inquisitive, personable, always ready to discuss and try new ideas. He was an active member of his team, who encouraged others and devised methods to increase collaboration and progress projects. He showed a good ability to refactor and write clean, minimal code. He was conscious of best practices and strived to follow them, as evidenced in his descriptive commit history in GitHub. Rodrigo is dependable, positive and has a future-focused approach to coding.",
     photo: "/images/testimonials/BonnieWall.png",
     linkedin: "https://www.linkedin.com/in/bonnie-wall",
-    github: "https://github.com/bone-bone",
+    github: "https://github.com/bonne-bonne",
   }
 ];
