@@ -91,7 +91,7 @@ const additionalWebApplications: WebApplicationProject[] = [
       "Azure SQL Database",
     ],
     type: "Full Stack",
-    demo: "https://banking-system-v3.vercel.app/",
+    demo: "https://banking-system-silk-mu.vercel.app/",
     code: "https://github.com/RodrigoNunes2004/BankingSystem.git",
   },
   {
