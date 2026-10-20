@@ -7,6 +7,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import logo from "@/assets/img/large.png";
@@ -113,6 +114,13 @@ const Navigation = () => {
                 <DropdownMenuItem asChild>
                   <Link to="/projects/games">Games</Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/projects/ai-models">AI Models</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link to="/projects/all">All Projects</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <button
@@ -185,6 +193,18 @@ const Navigation = () => {
                 className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors"
               >
                 Games
+              </button>
+              <button
+                onClick={() => handleRouteNavigation("/projects/ai-models")}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors"
+              >
+                AI Models
+              </button>
+              <button
+                onClick={() => handleRouteNavigation("/projects/all")}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent transition-colors"
+              >
+                All Projects
               </button>
             </div>
           </div>

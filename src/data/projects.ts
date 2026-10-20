@@ -7,7 +7,7 @@ export type WebApplicationProject = {
   description: string;
   image: string;
   tags: string[];
-  type: "Full Stack" | "Frontend" | "Backend";
+  type: "Full Stack" | "Frontend" | "Backend" | "AI";
   demo: string;
   code: string;
 };
@@ -133,7 +133,7 @@ export const gameProjects: GameProject[] = [
     videoLink:
       "https://drive.google.com/file/d/1Ehp5XSvebVnHfrjuyzlZmSovqs3mcmxm/view?usp=drive_link",
     downloadLink:
-      "https://drive.google.com/file/d/11w0vF0y7CwpCGrQl2vX1us7js8EHYe1M/view",
+      "https://drive.google.com/file/d/11w0vF0y7CwpCGrQl2vX1us7js8EHYe1M/view?usp=sharing",
     repoLink: "https://github.com/RodrigoNunes2004/ShooterSam",
     detailsLink: "/projects/games/shootersam",
     engine: "Unreal Engine",
@@ -157,7 +157,7 @@ export const gameProjects: GameProject[] = [
     videoLink:
       "https://drive.google.com/file/d/1GGkmtcAf26cK2GiOrSb7foUsK6MGkDzj/view?usp=drive_link",
     downloadLink:
-      "https://drive.google.com/file/d/1bZlHcGivfzNRiFmfD4ixsSEHWcqde9Zv/view",
+      "https://drive.google.com/file/d/1bZlHcGivfzNRiFmfD4ixsSEHWcqde9Zv/view?usp=sharing",
     repoLink: "https://github.com/RodrigoNunes2004/ObstacleAssault",
     detailsLink: "/projects/games/obstacleassault",
     engine: "Unreal Engine",
@@ -170,3 +170,28 @@ export const gameProjects: GameProject[] = [
 
 export const getGameBySlug = (slug: string) =>
   gameProjects.find((game) => game.slug === slug);
+
+export const aiModelProjects: WebApplicationProject[] = [
+  {
+    title: "Interview Coach",
+    description:
+      "A modern AI-powered interview practice application built with Next.js 15, Tailwind CSS, shadcn/ui, and Gemini.",
+    image:
+      "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+    tags: ["Next.js 15", "Tailwind CSS", "shadcn/ui", "Gemini"],
+    type: "AI",
+    demo: "https://interview-coach-self-ten.vercel.app/",
+    code: "https://github.com/Mission-Ready/l5-adv-2026-jul-l5-adv-mission-3-rodrigonunes2004",
+  },
+  {
+    title: "Tina – AI Insurance Recommendation Assistant",
+    description:
+      "A dark-theme conversational insurance assistant for Turners New Zealand, built with Next.js, TypeScript, and the Google Gemini API.",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+    tags: ["Next.js", "TypeScript", "Gemini API"],
+    type: "AI",
+    demo: "https://tina-insurance-assistant.vercel.app/",
+    code: "https://github.com/Mission-Ready/l5-adv-2026-jul-l5-adv-mission-4-rodrigonunes2004",
+  },
+];

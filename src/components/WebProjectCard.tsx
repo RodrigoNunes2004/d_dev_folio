@@ -12,6 +12,7 @@ const badgeStyles: Record<WebApplicationProject["type"], string> = {
   "Full Stack": "bg-primary/20 text-primary",
   Frontend: "bg-blue-500/20 text-blue-600",
   Backend: "bg-green-500/20 text-green-600",
+  AI: "bg-violet-500/20 text-violet-600 dark:text-violet-300",
 };
 
 const WebProjectCard = ({ project }: WebProjectCardProps) => {
