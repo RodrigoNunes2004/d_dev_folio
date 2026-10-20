@@ -38,7 +38,7 @@ const initialWebApplications: WebApplicationProject[] = [
       "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
     tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
     type: "Full Stack",
-    demo: "https://fullstackweek-donalds-nu.vercel.app/fsw-donalds",
+    demo: "https://fullstackweek-donalds-iota.vercel.app/fsw-donalds",
     code: "https://github.com/RodrigoNunes2004/fullstackweek-donalds.git",
   },
   {
@@ -49,7 +49,7 @@ const initialWebApplications: WebApplicationProject[] = [
       "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
     tags: ["JavaScript", "API Integration", "CSS"],
     type: "Frontend",
-    demo: "https://currency-converter-zeta-woad.vercel.app/",
+    demo: "https://currencyconverter-jade-theta.vercel.app/",
     code: "https://github.com/RodrigoNunes2004/currency_converter.git",
   },
   {
@@ -60,7 +60,7 @@ const initialWebApplications: WebApplicationProject[] = [
       "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
     tags: ["React", "Next.js", "PostgreSQL", "Authentication"],
     type: "Full Stack",
-    demo: "https://fullstackweek-barber-kjtw.vercel.app/",
+    demo: "https://fullstackweek-barber-five.vercel.app/",
     code: "https://github.com/RodrigoNunes2004/fullstackweek-barber.git",
   },
 ];
